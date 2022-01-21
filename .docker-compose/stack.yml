@@ -1,0 +1,17 @@
+version: '3.8'
+
+volumes:
+  prometheus_data: {}
+  grafana_data: {}
+
+services:
+  sampledb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pass123
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_DATABASE: sample
+    ports:
+      - 3306:3306
